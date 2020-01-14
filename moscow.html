@@ -4,7 +4,7 @@
    <meta charset="utf-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Tradiswiss landing"> 
-    <title>Tradiswiss Cafe</title>
+    <title>Tradiswiss Cafe Москва</title>
     <link rel="shortcut icon" href="http://www.tradiswiss.ch/img/construction/favicon.png">
     <link href='http://fonts.googleapis.com/css?family=Exo:300,400,600,700' rel='stylesheet' type='text/css'>
       <link href='http://fonts.googleapis.com/css?family=Aldrich' rel='stylesheet' type='text/css'>
@@ -26,6 +26,116 @@
         <script src="js/respond.min.js"></script>
         <script type="text/javascript" src="js/selectivizr.js"></script>
     <![endif]-->
+<!-- Подключаем файл стилей плагина выбора даты/времени -->
+<link rel="stylesheet" type="text/css" href="/путь_к/jquery.datetimepicker.css">                     
+<!--Подключаем файл стилей-->
+<link rel="stylesheet" type="text/css" href="/путь_к/jquery.jbform.css"><!--Тема по умолчанию-->        
+<!-- <link rel="stylesheet" type="text/css" href="/путь_к/css/blue.jquery.jbform.css"> --><!--Синий стиль-->
+<!-- <link rel="stylesheet" type="text/css" href="/путь_к/css/yellow.jquery.jbform.css"> --><!--Желтый стиль-->
+
+  
+  
+  
+  
+  <!-- Подключаем jQuery http://jquery.com/ -->
+  <script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+
+  <!-- jbCallMe Начало >>> -->
+  <script type="text/javascript" src="js/jquery.jbform.js"></script>    <!-- Плагин форм -->
+  <!--<link rel="stylesheet" type="text/css" href="css/jquery.jbform.css">--> <!-- Тема по-умолчанию -->
+  <link rel="stylesheet" type="text/css" href="css/blue.jquery.jbform.css">
+  <!-- <link rel="stylesheet" type="text/css" href="css/yellow.jquery.jbform.css">  Желтая тема-->
+
+  <!-- Подключаем плагин маски ввода -->
+  <script type="text/javascript" src="js/jquery.maskedinput.js"></script>
+                            
+  <!-- Подключаем плагин выбора даты/времени -->
+  <script type="text/javascript" src="js/jquery.datetimepicker.js"></script>
+  <!-- Подключаем файл стилей плагина выбора даты/времени -->
+  <link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">                      
+                             
+  <!-- Настройка формы -->
+  <script type="text/javascript">// <![CDATA[
+jQuery(document).ready(function($){
+  $('.reservation').jbform({ // где YOUR_BUTTON - класс вашей кнопки.
+    key: "c8834f227a4f275de200a36099e53ab7",
+    title: "Заказ стола",
+    captcha: true,
+    postfix: "callme_order",
+    fields: {
+        text_4: {
+            type: "hidden",
+            value: "Москва"
+        },
+        name: {
+            type: "text",
+            required: true,
+            label: "Фамилия Имя*",
+            placeholder: "Иванов Иван"
+        },
+        tel: {
+            type: "tel",
+            required: true,
+            label: "Ваш номер телефона*",
+            placeholder: "Ваш номер телефона"
+        },
+        select_2: {
+            type: "select",
+            required: true,
+            label: "Количество человек*",
+            placeholder: "Выберите число гостей",
+            options: [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6 и более"
+            ]
+        },
+        text_6: {
+            type: "date",
+            required: true,
+            label: "Дата брони*",
+            placeholder: "Выберите дату",
+            input_class: "jb_type_date jb_type_date"
+        },
+        select_8: {
+            type: "select",
+            label: "Время брони*",
+            placeholder: "Выберите желаемое время",
+            options: [
+                "10:00 - 12:00",
+                "12:00 - 14:00",
+                "16:00 - 18:00",
+                "20:00 - 22:00"
+            ]
+        },
+        text_10: {
+            type: "text",
+            label: "Комментарий к заказу:",
+            placeholder: "Ваши пожелания к бронированию столика"
+        },
+        submit: {
+            type: "submit",
+            value: "Отправить"
+        }
+    },
+    onShow: function(){
+        // Украина: '+38 (999) 999-99-99', любой номер телефона: '(999) 999-9999?99999'             
+        $('#jbForm_callme_order [name=tel]').mask('+7 (999) 999-99-99');
+        // Вы можете сменить формат даты и язык  @homepage http://xdsoft.net/jqplugins/datetimepicker/'             
+        $('#jbForm_callme_order [name=text_6]').datetimepicker({ 
+            timepicker:false,
+            format:'d.m.Y',
+            formatDate:'d.m.Y', 
+            lang:'ru'
+        });
+    }
+  });
+});  
+// ]]></script>
+
 </head>
 
 <body>
@@ -48,22 +158,22 @@
         <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
             <ul class="nav navbar-nav">
                  <li class="active">
-                            <a href="#slider">ГЛАВНАЯ</a>
+                            <a href="index.html">ГЛАВНАЯ</a>
                         </li>
                         <li>
                             <a href="#about">БАНКЕТЫ</a>
                         </li>
 						 <li>
-                            <!--<a href="#services">АКЦИИ</a>-->
+                            <a href="#services">АКЦИИ</a>
                         </li>
 						 <li>
                             <a href="#menuCard">МЕНЮ</a>
                         </li> 
                         <li>
-                            <a href="#portfolio">ГАЛЕРЕЯ</a>
+                            <!--<a href="#portfolio">ГАЛЕРЕЯ</a>-->
                         </li> 
                         <li>
-                            <!--<a href="#clients">ЗАБРОНИРОВАТЬ</a>-->
+                            <a href="#clients">ЗАБРОНИРОВАТЬ</a>
                         </li>
                         <li>
                             <a href="#team">КОНТАКТЫ</a>
@@ -124,7 +234,7 @@
 
                 <p class="sp-layer"
                 data-position="center" data-vertical="15%" data-show-delay="2000" data-hide-delay="200" data-show-transition="left" data-hide-transition="right">
-                   Незабываемый вкус теперь и в России
+                   Незабываемый вкус теперь и в Москве
                 </p>
             </div>
             <!-- Slides End -->
@@ -150,7 +260,9 @@
         </div>
     </section>
     <!-- Main Slider End -->
- <section id="about" class="about-sec section-wrapper description">
+
+
+    <section id="about" class="about-sec section-wrapper description">
         <div class="container">
             <div class="row">
                 <!-- Section Header -->
@@ -166,7 +278,7 @@
                 </div>
 
                 <div class="col-md-6 col-sm-6 col-xs-12 customized-text wow fadeInDown black-ed">
-                <p style="font-size: 16px;">Вы можете забронировать столик или весь банкетный зал в зависимости от числа гостей.</p>
+				<p style="font-size: 16px;">Вы можете забронировать столик или весь банкетный зал в зависимости от числа гостей.</p>
                     <div class="row"> 
                         <div class="col-md-11">
                             <p style="font-size: 18px;"><strong>Цена</strong></p>
@@ -182,14 +294,94 @@
                     <div class="row"> 
                         <div class="col-md-11">
                             <p style="font-size: 18px;"><strong>Музыка</strong></p>
-                            <p style="font-size: 16px;">Для вас будет играть живая музыка с Альпийских гор!</p>
+                            <p style="font-size: 16px;">Для вас будет играть живая музыка с любимыми хитами!</p>
                         </div>
                     </div>
                 </div>
             </div> 
         </div>
     </section> 
-    
+  
+    <section id="services" class="section-wrapper">
+        <div class="container">
+            <div class="row">
+
+                <!-- Section Header -->
+                <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">
+                    <h2><span class="highlight-text">Акции</span></h2>
+                   
+                    <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1"style="font-size: 22px;">Вы можете выбрать одну из трех акций в зависимости от времени. Акция включает в себя блюдо дня по сниженной цене. Акции действуют только в рестороне в Москве!</p>
+                </div>
+                <!-- Section Header End -->
+ 
+                <div class="our-services">
+			 
+		
+		 <div class="row">
+                        <div class="col-md-4 col-sm-4 col-xs-12 text-xs-center wow fadeInDown" data-wow-delay=".2s">
+						<div class="service-box">
+                            <div class="icon"> <h3>Завтрак</h3>
+                            </div> 
+                            <p>Чашка кофе с кусочком морковного торта</p>
+							<img src="images/breakfast.jpg" alt="Custom Image">
+							</div> 
+</div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 text-xs-center wow fadeInDown" data-wow-delay=".2s">
+						<div class="service-box">
+                            <div class="icon"> <h3>Обед </h3>
+                            </div>
+                            
+                            <p>Аппетитный Рёшти и порция раклетта </p>
+							<img src="images/lunch.jpg" alt="Custom Image">
+                        </div>
+</div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 text-xs-center wow fadeInDown" data-wow-delay=".2s">
+						<div class="service-box">
+                            <div class="icon"> <h3>Ужин</h3>
+                            </div>
+                            
+                            <p>Альплермагронен и вишневый пирог.</p>
+							<img src="images/dinner.jpg" alt="Custom Image">
+                        </div>
+</div>
+                     
+                    </div> 
+                    <div class="row">
+                     
+                        <div class="col-md-4 col-sm-4 col-xs-12 text-xs-center wow fadeInDown" data-wow-delay=".1s">
+						<div class="service-box">
+                            <div class="icon">
+                                <i class="icon_star-half_alt"></i><h3>Бар</h3>
+                            </div>
+                            
+                            <p>У нас есть снэк бар, где вы можете купить горячительные алкогольные  и безалкогольные напитки до самого закрытия.</p>
+                        </div>
+</div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 text-xs-center wow fadeInDown" data-wow-delay=".1s">
+						<div class="service-box">
+                            <div class="icon">
+                                <i class="icon_music"></i><h3>Музыка</h3>
+                            </div>
+                            
+                            <p>Мы как никто знаем, что музыка - залог отличного времяпровождения. Наслаждайтесь тематической музыкой каждый день!</p>
+                        </div>
+</div>
+                        <div class="col-md-4 col-sm-4 col-xs-12 text-xs-center wow fadeInDown" data-wow-delay=".1s">
+						<div class="service-box">
+                            <div class="icon">
+                                <i class="icon_cog"></i><h3>Залы</h3>
+                            </div>
+                            
+                            <p>У нас два зала: для курящих, для некурящих и банкетный зал. Вы можете выбрать себе самый подходящий формат.</p>
+                        </div>
+</div>
+                    </div>
+                </div> 
+
+            </div>
+        </div>
+    </section> 
+
 <section class="menus style3" id="menuCard">
                 <div class="container"> 
                     <div class="row"> 
@@ -341,223 +533,26 @@
                 </div><!-- /container -->
             </section>
 
-
-    <section id="portfolio" class="bgSection portfolio-section">
-        <div class="container">
-            <div class="row">
-
                 <!-- Section Header -->
-                <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">
-                    <h2><span class="highlight-text">Галерея</span></h2>
-                </div>
-                <!-- Section Header End -->
+                <section id="clients" class="clients-section">
+                <div class="container">
+                    <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">
 
-            </div>
-        </div>
-
-        <!-- Works -->
-        <div class="portfolio-works wow fadeIn" data-wow-duration="2s">
-
-            <!-- Filter Button Start -->
-            <div id="portfolio-filter" class="portfolio-filter-btn-group">
-                <ul>
-                    <li>
-                        <a href="#" class="selected" data-filter="*">ВСЕ</a> 
-						<a href="#" data-filter=".web">БЛЮДА</a> 
-						<a href="#" data-filter=".seo">КАФЕ В МОСКВЕ</a> 
-						<a href="#" data-filter=".works">КАФЕ В САМАРЕ</a> 
-						<a href="#" data-filter=".brands">КАФЕ В НИЦЦЕ</a> 
-                    </li>
-                </ul>
-            </div>
-            <!-- Filter Button End -->
-
-            <div class="portfolio-items">
-
-                <!-- Portfolio Items -->
-                <div class="item portfolio-item web seo">
-
-                    <img src="images/img-portfolio/portfolio1.jpg" alt="">
-                    <div class="portfolio-details-wrapper">
-                        <div class="portfolio-details">
-                            <div class="portfolio-meta-btn">
-                                <ul class="work-meta">
-                                    <li class="lighbox"><a href="images/img-portfolio/portfolio1.jpg" class="featured-work-img"><i class="fa fa-search-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Portfolio Items End -->
-
-                <!-- Portfolio Items -->
-                <div class="item portfolio-item works seo">
-
-                    <img src="images/img-portfolio/portfolio2.jpg" alt="">
-                    <div class="portfolio-details-wrapper">
-                        <div class="portfolio-details">
-                            <div class="portfolio-meta-btn">
-                                <ul class="work-meta">
-                                    <li class="lighbox"><a href="images/img-portfolio/portfolio2.jpg" class="featured-work-img"><i class="fa fa-search-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Portfolio Items End -->
-
-                <!-- Portfolio Items -->
-                <div class="item portfolio-item web">
-
-                    <img src="images/img-portfolio/portfolio3.jpg" alt="">
-                    <div class="portfolio-details-wrapper">
-                        <div class="portfolio-details">
-                            <div class="portfolio-meta-btn">
-                                <ul class="work-meta">
-                                    <li class="lighbox"><a href="images/img-portfolio/portfolio3.jpg" class="featured-work-img"><i class="fa fa-search-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Portfolio Items End -->
-
-                <!-- Portfolio Items -->
-                <div class="item portfolio-item web works brands">
-
-                    <img src="images/img-portfolio/portfolio4.jpg" alt="">
-                    <div class="portfolio-details-wrapper">
-                        <div class="portfolio-details">
-                            <div class="portfolio-meta-btn">
-                                <ul class="work-meta">
-                                    <li class="lighbox"><a href="images/img-portfolio/portfolio4.jpg" class="featured-work-img"><i class="fa fa-search-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Portfolio Items -->
-
-                <!-- Portfolio Items -->
-                <div class="item portfolio-item web brands">
-
-                   <img src="images/img-portfolio/portfolio5.jpg" alt="">
-                    <div class="portfolio-details-wrapper">
-                        <div class="portfolio-details">
-                            <div class="portfolio-meta-btn">
-                                <ul class="work-meta">
-                                    <li class="lighbox"><a href="images/img-portfolio/portfolio5.jpg" class="featured-work-img"><i class="fa fa-search-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Portfolio Items End -->
-
-                <!-- Portfolio Items -->
-                <div class="item portfolio-item works seo">
-
-                    <img src="images/img-portfolio/portfolio6.jpg" alt="">
-                    <div class="portfolio-details-wrapper">
-                        <div class="portfolio-details">
-                            <div class="portfolio-meta-btn">
-                                <ul class="work-meta">
-                                    <li class="lighbox"><a href="images/img-portfolio/portfolio6.jpg" class="featured-work-img"><i class="fa fa-search-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Portfolio Items End -->
-
-                <div class="item portfolio-item brands seo">
-
-                    <img src="images/img-portfolio/portfolio1.jpg" alt="">
-                    <div class="portfolio-details-wrapper">
-                        <div class="portfolio-details">
-                            <div class="portfolio-meta-btn">
-                                <ul class="work-meta">
-                                    <li class="lighbox"><a href="images/img-portfolio/portfolio7.jpg" class="featured-work-img"><i class="fa fa-search-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Portfolio Items End -->
-
-                <!-- Portfolio Items -->
-                <div class="item portfolio-item web seo works">
-
-                    <img src="images/img-portfolio/portfolio2.jpg" alt="">
-                    <div class="portfolio-details-wrapper">
-                        <div class="portfolio-details">
-                            <div class="portfolio-meta-btn">
-                                <ul class="work-meta">
-                                    <li class="lighbox"><a href="images/img-portfolio/portfolio8.jpg" class="featured-work-img"><i class="fa fa-search-plus"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- Portfolio Items End -->
- 
-                
-
-            </div>
-        </div>
-        <!-- Works End -->
-
-
-    </section>
-    <!-- Portfolio Section End -->
-
-
-<section id="info" class="info-section">
-<div class="container text-xs-center">
-         <!-- Section Header -->
-                <div class="col-md-12 col-sm-12 col-xs-12 section-header wow fadeInDown">
-                    <h2><span class="highlight-text">Статистика</span></h2>
-                   
-                    <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1" style="font-size: 22px;">Наше кафе следит за своим качеством, а главный показатель - это любовь наших посетителей.</p>
-                </div>
-                <!-- Section Header End -->
-        <div class="row wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-            <div class="col-md-3 col-sm-6 col-xs-12 text-xs-center">
-                
-                <i class="icon_mic_alt wow pulse" style="visibility: visible; animation-name: pulse;"></i>
-                <h4>Количество заказов</h4>
-				<h1 class="text-primary">1456</h1>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 text-xs-center">
-                
-                <i class="icon_gift_alt wow pulse" style="visibility: visible; animation-name: pulse;"></i>
-                <h4>Проведенных банкетов</h4>
-				<h1 class="text-primary">320</h1>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 text-xs-center">
-              
-                <i class="icon_house wow pulse" style="visibility: visible; animation-name: pulse;"></i>
-  <h4>Кафе по всему миру</h4>               
-			   <h1 class="text-primary">3</h1>
-            </div>
-            <div class="col-md-3 col-sm-6 col-xs-12 text-xs-center">
-               
-                <i class="icon_lightbulb_alt wow pulse" style="visibility: visible; animation-name: pulse;"></i>
- <h4>Довольных клиентов</h4>               
-			   <h1 class="text-primary">1700</h1>
-            </div>
-        </div> 
-    </div>
+            <h2><span class="highlight-text">Забронируйте столик!</span></h2>
+             <p class="col-md-8 col-sm-10 col-xs-12 col-md-offset-2 col-sm-offset-1" style="font-size: 22px;">Заполните данные и мы свяжемся с вами!</p>
+             <img src="images/plan.jpg">
+             </div>
+         </div>
+                <center>
+                    <button type="button" class="btn btn-danger" data-toggle="modal"><a href="#" data-toggle="modal" class="reservation" style="color: white;">Кнопка вызова формы</a></button>
+                    
+</center>
+</div>
+</div>
+</div>
 </section>
 
-                <!-- Section Header -->
 <section id="team" class="clients-section">
       <!-- Container Ends -->
       <div class="container">
@@ -585,10 +580,10 @@
 
             <div class="col-md-3 col-sm-6 col-xs-12 text-xs-center">
               
-                <a href="moscow.html" target="_blank"><i class="icon_house wow pulse" style="visibility: visible; animation-name: pulse;"></i>
+                <i class="icon_house wow pulse" style="visibility: visible; animation-name: pulse;"></i>
   <h4>Кафе в городе</h4>               
                <h1 class="text-primary">Москва</h1>
-            </a></div>
+            </div>
             <div class="col-md-3 col-sm-6 col-xs-12 text-xs-center">
             <i class="icon_house wow pulse" style="visibility: visible; animation-name: pulse;"></i>
   <h4>Кафе в городе</h4>               
@@ -647,6 +642,13 @@
     <script src="contact/contact_me.js"></script>
     <script src="js/custom.js"></script>
 <script src="jquery.maskedinput.min.js" type="text/javascript"></script>
-
+<!--Подключаем js модуль форм-->
+<script type="text/javascript" src="/путь_к/jquery.jbform.js"></script>
+<!--Если jQuery не был подключен ранее, подключаем его-->           
+<script type="text/javascript" src="/путь_к/jquery-1.8.3.min.js"></script>
+<!-- Подключаем плагин маски ввода -->          
+<script type="text/javascript" src="/путь_к/jquery.maskedinput.js"></script>                          
+<!-- Подключаем плагин выбора даты/времени -->          
+<script type="text/javascript" src="/путь_к/jquery.datetimepicker.js"></script>
 </body>
 </html>

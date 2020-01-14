@@ -39,7 +39,7 @@ ul{
 
 header.page-header{
 	-webkit-background-size: cover;
-	height: 330px;
+	height: 350px;
 	background-size: cover;
 	position: relative;
 }
@@ -1075,7 +1075,7 @@ header.page-header .main-menu.minified{
 
 #team {
     padding: 100px 0;
-    background: #f3f3f3;
+    background: #ffffff;
 }
 .teams-section{
 	position: relative;
